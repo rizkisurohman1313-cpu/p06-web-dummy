@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P06 · Web Dummy Keamanan AI/LLM · Rizki Surohman</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #1e293b;
+      --line: #334155;
+      --txt: #f8fafc;
+      --mut: #94a3b8;
+      --acc: #06b6d4;
+      --bad: #f43f5e;
+      --good: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--txt);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--acc);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .meta {
+      color: var(--mut);
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .meta strong { color: var(--txt); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+    }
+    .card.rentan { border-top: 4px solid var(--bad); }
+    .card.aman { border-top: 4px solid var(--good); }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .card.rentan .tag { color: var(--bad); }
+    .card.aman .tag { color: var(--good); }
+    .card h2 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 13px;
+      color: var(--mut);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .btn-bad {
+      background: var(--bad);
+      color: #fff;
+    }
+    .btn-bad:hover { background: #e11d48; }
+    .btn-good {
+      background: var(--good);
+      color: #022c22;
+    }
+    .btn-good:hover { background: #059669; }
+    footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--mut);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">PMI 1522 · Praktikum Minggu 6</span>
+    <h1>Web Dummy Risiko AI/LLM & Prompt Injection</h1>
+    <div class="meta">
+      <strong>Nama:</strong> Rizki Surohman &nbsp;|&nbsp; 
+      <strong>NPM:</strong> 24781024 &nbsp;|&nbsp; 
+      <strong>Kelas:</strong> 5A<br>
+      <strong>Kasus:</strong> LIVE-2 · Peringkas Ulasan Marketplace Kampus (Indirect Prompt Injection)
+    </div>
+
+    <div class="grid">
+      <div class="card rentan">
+        <div>
+          <div class="tag">Simulasi Kelemahan</div>
+          <h2>Versi Rentan</h2>
+          <p>Aturan dan ulasan disatukan ke prompt tanpa hierarki otoritas. Sisipan injeksi ulasan dapat mengambil alih instruksi model.</p>
+        </div>
+        <a class="btn btn-bad" href="24781024-ulasan-rentan.html">Buka Versi Rentan &rarr;</a>
+      </div>
+
+      <div class="card aman">
+        <div>
+          <div class="tag">Simulasi Pertahanan</div>
+          <h2>Versi Aman</h2>
+          <p>Dilengkapi 4 lapis kontrol di luar model: karantina ulasan, pelabelan data, validasi output, dan penonaktifan tool.</p>
+        </div>
+        <a class="btn btn-good" href="24781024-ulasan-aman.html">Buka Versi Aman &rarr;</a>
+      </div>
+    </div>
+
+    <footer>
+      Politeknik Negeri Lampung · Keamanan Sistem Informasi 2026
+    </footer>
+  </div>
+</body>
+</html>
